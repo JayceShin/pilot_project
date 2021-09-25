@@ -33,6 +33,8 @@
 
     DB에서 최근 3년의 법인카드 사용내역 및 전표에 대한 데이터를 수집하였습니다.
 
+https://github.com/JayceShin/portfolio/issues/1#issue-1007093023
+
 ### 전처리
 
     Null Data 및 시간 데이터에 대해 전처리를 진행하였습니다.
