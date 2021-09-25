@@ -184,3 +184,41 @@ model.fit(df_ml);
 ```
 
 ***
+## 4 수행 결과
+
+    Large Sclae의 금액 예측 문제이기 때문에 RMSE가 아닌 R2를 평가 기준으로 삼았습니다.
+
+### Real Data 
+
+
+### Statistics Modeling
+
+1. Simple Moving Average   
+
+2. Exponential Moving Average   
+
+3. Simple Exponential Smoothing   
+
+4. Holt-Winter's Exponential Smoothing   
+
+
+### Machin Learning Modeling
+
+1. Basic   
+
+2. Change Point   
+
+3. Holiday   
+
+### Result
+
+    통계 모형의 지수평활법이 가장 높은 정확도를 보였습니다.
+
+📌 통계적 모델이 기계학습보다 정확도가 월등한 이유?
+일매출은 변동이 매우 크고 추세(계절성)를 파악하기 어렵기 때문에 단순한 모델이 효과가 좋은 것으로 보입니다.   
+또한 해당 분야를 연구해 상관성이 높은 Feature를 추출하고 prophet이 아닌 다른 기계학습 모델로 수행하였다면 더 좋은 결과를 냈을것이라 생각합니다.
+
+📌 고찰
+매출 현황의 추세를 본다면 통계모형으로도 부족하지 않은것으로 보이나 통계모형은 짧은기간의 데이터만 예측한다는 한계점이 있기에 유의미한 변수를 수집해 머신러닝쪽으로 더 정확한 모델을 개발하여  예측 결과에 따른 대응 전략을 수립하는데 유용할 것이라 생각합니다.
+
+***
