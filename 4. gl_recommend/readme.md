@@ -33,7 +33,7 @@
 
     DB에서 최근 3년의 법인카드 사용내역 및 전표에 대한 데이터를 수집하였습니다.
 
-https://github.com/JayceShin/portfolio/issues/1#issue-1007093023
+![회계_데이터](https://user-images.githubusercontent.com/31294995/134773991-00d80d96-068e-467e-9c82-85a88037f627.PNG)
 
 ### 전처리
 
