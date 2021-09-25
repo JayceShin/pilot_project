@@ -138,6 +138,8 @@ y_pred2 = holt_fit2.fittedvalues
 0. Boundary   
 Outlier를 제거하기위해 금액별 Sorting을 하였고, 상위 1개/ 하위 4개를 제거하도록 Boundary를 지정하였습니다.
 
+![매출_소팅](https://user-images.githubusercontent.com/31294995/134778585-55047d0e-e92f-41cb-93c7-c0c874df69ca.PNG)
+
 1. Basic   
 다른 조건 없이 일자/ 매출액 두 가지 변수로 매출액을 예측하였습니다.
 
@@ -190,25 +192,33 @@ model.fit(df_ml);
 
 ### Real Data 
 
+실제 매출 예측치와 매출액의 차이를 계산한 R2 Score입니다.   
+![매출_실제](https://user-images.githubusercontent.com/31294995/134778589-8acc6c1b-9ee8-48b2-bfd2-0567386e0001.PNG)
 
 ### Statistics Modeling
 
 1. Simple Moving Average   
+![매출_이동평균](https://user-images.githubusercontent.com/31294995/134778593-600fc440-d87d-425b-8b13-51b499ce51be.PNG)
 
 2. Exponential Moving Average   
+![매출_지수평활](https://user-images.githubusercontent.com/31294995/134778592-1296e9c0-05c7-42b3-92d4-245100d796e7.PNG)
 
 3. Simple Exponential Smoothing   
+![매출_심플](https://user-images.githubusercontent.com/31294995/134778591-8102c2e1-653a-49ea-b747-61483c2af665.PNG)
 
 4. Holt-Winter's Exponential Smoothing   
-
+![매출_홀트](https://user-images.githubusercontent.com/31294995/134778590-1f6b13a7-6cfc-46c9-96a5-c46c6fd86960.PNG)
 
 ### Machin Learning Modeling
 
 1. Basic   
+![매출_베이직](https://user-images.githubusercontent.com/31294995/134778588-4be0d3cf-fbff-42a1-8d37-adc9c10d98fb.PNG)
 
 2. Change Point   
+![매출_체인지](https://user-images.githubusercontent.com/31294995/134778587-08c9a037-ff2b-4c26-8ca2-24d3c5e587d0.PNG)
 
 3. Holiday   
+![매출_휴일](https://user-images.githubusercontent.com/31294995/134778586-5e876dbb-abd5-42dc-b8cf-d3da4fa25948.PNG)
 
 ### Result
 
