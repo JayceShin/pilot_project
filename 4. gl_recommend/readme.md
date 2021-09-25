@@ -61,8 +61,14 @@
 
 ### Xgboost
 
+1. GridSearch   
+fff
+
+2. Sampling(Under/ Over)   
+fff
 
 ### MLP
+
 ***
 ## 4. 수행 결과
 
