@@ -138,9 +138,6 @@ y_pred2 = holt_fit2.fittedvalues
 0. Boundary   
 Outlier를 제거하기위해 금액별 Sorting을 하였고, 상위 1개/ 하위 4개를 제거하도록 Boundary를 지정하였습니다.
 
-```python
-```
-
 1. Basic   
 다른 조건 없이 일자/ 매출액 두 가지 변수로 매출액을 예측하였습니다.
 
@@ -151,7 +148,7 @@ model =  Prophet.Prophet(growth='logistic')
 model.fit(df_ml);
 ```
 
-2. Change Point
+2. Change Point   
 입력된 데이터들의 추세를 조정하는 인자로 탐색을 통해 찾은 최적값 0.01로 설정하였습니다. 추가적인 추세변경점으로 코로나 일자를 넣었으나 결과에 영향은 없었습니다.
 
 ```python
@@ -161,7 +158,7 @@ model =  Prophet.Prophet(changepoint_prior_scale=0.01)
 model.fit(df_ml);
 ```
 
-3. Holiday
+3. Holiday   
 앞서 수집한 공휴일을 redday로 행사일을 evntday로 설정하여 데이터를 형성하였고, 각 Boundary를 주어 해당되는 일자에 전반적으로 영향을 미치도록 하였습니다.
 
 ```python
