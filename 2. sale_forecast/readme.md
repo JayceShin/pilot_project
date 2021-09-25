@@ -44,7 +44,7 @@ ex) 2021년 9월 26일의 매출 예측치 = (2018년 9월 26일 매출액 + 201
 ***
 ## 3 모델링
 
-    시계열 데이터의 예측문제이기 때문에 통계적 방법과 기계학습 방법 두 가지로 접근하였고, 금액 예측이므로 평가지표는 R2로 선정하였습니다.
+    시계열 데이터의 예측문제이기 때문에 통계적 방법과 기계학습 방법 두 가지로 접근하였습니다.
 
 ### Statistics Modeling
 
@@ -133,19 +133,56 @@ y_pred2 = holt_fit2.fittedvalues
 
 ### Machin Learning Modeling
 
-    시계열 예측 모델인 Prophet을 사용하였으며 각 변수의 조건을 달리하며 실험하였습니다.
+    시계열 예측 모델인 Prophet을 사용하였으며 데이터의 조건을 달리하며 실험하였습니다.
 
-0. Boundary
+0. Boundary   
+Outlier를 제거하기위해 금액별 Sorting을 하였고, 상위 1개/ 하위 4개를 제거하도록 Boundary를 지정하였습니다.
 
+```python
+```
 
-1. Basic
+1. Basic   
+다른 조건 없이 일자/ 매출액 두 가지 변수로 매출액을 예측하였습니다.
 
+```python
+df_ml['cap'] = 10000000
+df_ml['floor'] = 3000000
+model =  Prophet.Prophet(growth='logistic') 
+model.fit(df_ml);
+```
 
 2. Change Point
+입력된 데이터들의 추세를 조정하는 인자로 탐색을 통해 찾은 최적값 0.01로 설정하였습니다. 추가적인 추세변경점으로 코로나 일자를 넣었으나 결과에 영향은 없었습니다.
 
+```python
+df_ml['cap'] = 10000000
+df_ml['floor'] = 3000000
+model =  Prophet.Prophet(changepoint_prior_scale=0.01) 
+model.fit(df_ml);
+```
 
 3. Holiday
+앞서 수집한 공휴일을 redday로 행사일을 evntday로 설정하여 데이터를 형성하였고, 각 Boundary를 주어 해당되는 일자에 전반적으로 영향을 미치도록 하였습니다.
 
+```python
+redday = pd.DataFrame({
+  'holiday': 'redday',
+  'ds': pd.to_datetime(df_hol['DS']),
+  'lower_window': 0,
+  'upper_window': 1,
+})
+evntday = pd.DataFrame({
+  'holiday': 'evntday',
+  'ds': pd.to_datetime(df_evnt['EVNT_START_YMD']),
+  'lower_window': 0,
+  'upper_window': 1,
+})
+holidays = pd.concat((redday, evntday))
 
+df_ml['cap'] = 10000000
+df_ml['floor'] = 300000
+model =  Prophet.Prophet(changepoint_prior_scale=0.01, holidays=holidays, yearly_seasonality=10, weekly_seasonality=5, daily_seasonality=False) 
+model.fit(df_ml);
+```
 
 ***
