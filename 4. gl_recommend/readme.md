@@ -65,6 +65,7 @@
 최적 파라미터값을 찾기 위해 RandomizerSearch를 사용하였습니다. 일반적으로 모든 조합을 찾는 GridSearch보다 성능은 떨어질지 몰라도 조합을 무작위로 추출하는 RandomizerSearch가 시간 면에서 효율적이라고 판단하였기 때문입니다. 또한 검증을 위해 3 fold를 사용하였습니다.
 
 ![회계_grid](https://user-images.githubusercontent.com/31294995/134774544-069449ee-868d-4b55-b3da-29a90b5cb1b4.PNG)
+ref <https://medium.com/@peterworcester_29377/a-comparison-of-grid-search-and-randomized-search-using-scikit-learn-29823179bc85>
 
 ```python
 folds = 3
