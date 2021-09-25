@@ -77,6 +77,13 @@ params = {
         'colsample_bytree': [0.6, 0.8, 1.0],
         'max_depth': [3, 4, 5]
         }
+        
+# Param describe
+# gamma 트리에서 가지를 추가로 치기 위해 필요한 최소한의 손실 감소 기준. 기준값이 클 수록 모형이 더 단순해진다.(> 0)
+# max_depth 트리의 최대 깊이.(> 0)
+# min_child_weight 트리에서 가지를 추가로 치기 위해 필요한 최소한의 사례 수.(> 0)
+# subsample 각각의 트리를 만들 때 데이터에서 사용할 행(row)의 비율(0 ~ 1)
+# colsample_bytree 각각의 트리를 만들 때 데이터에서 사용할 열(column)의 비율(0 ~ 1)
 
 skf = StratifiedKFold(n_splits=folds, shuffle = True, random_state = 1001)
 random_search = RandomizedSearchCV(xgb, param_distributions=params, n_iter=param_comb, scoring='f1_micro', 
