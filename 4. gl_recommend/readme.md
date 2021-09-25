@@ -59,8 +59,10 @@
 ***
 ## 3. 모델링
 
-### Xgboost
+    분류문제이기 때문에 기계학습 방식의 XGBClassifier와 Pytorch를 사용한 MLP Classifier를 구성하였습니다.
 
+### Xgboost
+    
 1. RandomizerSerach & K-fold    
 최적 파라미터값을 찾기 위해 RandomizerSearch를 사용하였습니다. 일반적으로 모든 조합을 찾는 GridSearch보다 성능은 떨어질지 몰라도 조합을 무작위로 추출하는 RandomizerSearch가 시간 면에서 효율적이라고 판단하였기 때문입니다. 또한 검증을 위해 3 fold를 사용하였습니다.
 
@@ -105,9 +107,57 @@ X_under, y_under = RandomUnderSampler(random_state=0).fit_resample(X_train, y_tr
 X_samp_smote, y_samp_smote = SMOTE(random_state=4).fit_resample(X_train, y_train)
 ```
 
-![데이터분포](https://user-images.githubusercontent.com/31294995/134774549-fa658840-72ba-4431-b950-5a8e62b7908e.PNG)
-
 ### MLP
+
+
+1. Parameter
+학습을 위해 사용한 학습 파라미터들은 아래와 같습니다.
+
+```python
+EPOCHS = 50
+BATCH_SIZE = 64
+LEARNING_RATE = 0.001
+NUM_FEATURES = len(X.columns)
+NUM_CLASSES = 13
+```
+
+2. Network
+분류기 네트워크 구성은 아래와 같습니다.
+```python
+class MulticlassClassification(nn.Module):
+    def __init__(self, num_feature, num_class):
+        super(MulticlassClassification, self).__init__()
+        
+        self.layer_1 = nn.Linear(num_feature, 512)
+        self.layer_2 = nn.Linear(512, 128)
+        self.layer_3 = nn.Linear(128, 64)
+        self.layer_out = nn.Linear(64, num_class) 
+        
+        self.relu = nn.ReLU()
+        self.dropout = nn.Dropout(p=0.2)
+        self.batchnorm1 = nn.BatchNorm1d(512)
+        self.batchnorm2 = nn.BatchNorm1d(128)
+        self.batchnorm3 = nn.BatchNorm1d(64)
+        
+    def forward(self, x):
+        x = self.layer_1(x)
+        x = self.batchnorm1(x)
+        x = self.relu(x)
+        
+        x = self.layer_2(x)
+        x = self.batchnorm2(x)
+        x = self.relu(x)
+        x = self.dropout(x)
+        
+        x = self.layer_3(x)
+        x = self.batchnorm3(x)
+        x = self.relu(x)
+        x = self.dropout(x)
+        
+        x = self.layer_out(x)
+        
+        return x
+```
 
 ***
 ## 4. 수행 결과
