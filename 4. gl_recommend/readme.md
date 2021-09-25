@@ -168,5 +168,12 @@ class MulticlassClassification(nn.Module):
 
 ### xgboost
 
+1. Basic
+
+2. Under Sampling
+
+3. Over Sampling
 
 ### MLP
+
+### Final
