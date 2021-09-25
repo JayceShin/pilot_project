@@ -187,36 +187,45 @@ model.fit(df_ml);
 ***
 ## 4 수행 결과
 
-    Large Sclae의 금액 예측 문제이기 때문에 RMSE가 아닌 R2를 평가 기준으로 삼았습니다.
+    Large Sclae의 금액 예측 문제이기 때문에 RMSE가 아닌 R2를 평가 기준으로 삼았습니다. 
+    R2는 차이가 클 시 (-) 값이 나올 수 있습니다.
 
 ### Real Data 
 
 실제 매출 예측치와 매출액의 차이를 계산한 R2 Score입니다.   
+**R2: -2.194**   
 ![매출_실제](https://user-images.githubusercontent.com/31294995/134778589-8acc6c1b-9ee8-48b2-bfd2-0567386e0001.PNG)
 
 ### Statistics Modeling
 
 1. Simple Moving Average   
+**Best R2: 0.688(window size:2)**   
 ![매출_이동평균](https://user-images.githubusercontent.com/31294995/134778593-600fc440-d87d-425b-8b13-51b499ce51be.PNG)
 
 2. Exponential Moving Average   
+**Best R2: 0.884(window size:2)**   
 ![매출_지수평활](https://user-images.githubusercontent.com/31294995/134778592-1296e9c0-05c7-42b3-92d4-245100d796e7.PNG)
 
 3. Simple Exponential Smoothing   
+**Best R2: 0.119(smoothing_level=0.05)**   
 ![매출_심플](https://user-images.githubusercontent.com/31294995/134778591-8102c2e1-653a-49ea-b747-61483c2af665.PNG)
 
 4. Holt-Winter's Exponential Smoothing   
+**Best R2: 0.119(smoothing_level=0.8, smoothing_slope=0.3)**   
 ![매출_홀트](https://user-images.githubusercontent.com/31294995/134778590-1f6b13a7-6cfc-46c9-96a5-c46c6fd86960.PNG)
 
 ### Machin Learning Modeling
 
 1. Basic   
+**Best R2: 0.111**   
 ![매출_베이직](https://user-images.githubusercontent.com/31294995/134778588-4be0d3cf-fbff-42a1-8d37-adc9c10d98fb.PNG)
 
 2. Change Point   
+**Best R2: 0.118**   
 ![매출_체인지](https://user-images.githubusercontent.com/31294995/134778587-08c9a037-ff2b-4c26-8ca2-24d3c5e587d0.PNG)
 
 3. Holiday   
+**Best R2: 0.119**  
 ![매출_휴일](https://user-images.githubusercontent.com/31294995/134778586-5e876dbb-abd5-42dc-b8cf-d3da4fa25948.PNG)
 
 ### Result
