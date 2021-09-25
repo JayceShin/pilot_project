@@ -26,6 +26,7 @@
 
     Label이 총 5개의 카테고리로 구성되었기에 int형으로 인코딩하였습니다.   
 
+Encoding
 ```python
 # Train Data의 Category를 숫자형 데이터로 변환
 for i in range(len(train_data['Category'])):
@@ -45,6 +46,7 @@ for i in range(len(train_data['Category'])):
 
     EDA 과정을 통해 Imbalanced Data임을 확인하였으므로 OverSampling을 진행하였습니다.   
 
+OverSampling
 ```python
 # Oversampling을 위해 가장 큰 클래스를 기준으로 각 클래스별 반복수를 설정
 con = train_data.sample(frac=1, axis=0)
