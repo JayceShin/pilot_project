@@ -19,7 +19,8 @@
 ### Class Imbalanced
 
     데이터 분포 확인을 통해 Class Imbalance임을 파악하였습니다.   
-    ![캐글_임밸런스](https://user-images.githubusercontent.com/31294995/134780171-acf6d445-93cb-4b7a-8002-6247a4f444d5.PNG)
+    
+![캐글_임밸런스](https://user-images.githubusercontent.com/31294995/134780171-acf6d445-93cb-4b7a-8002-6247a4f444d5.PNG)
 
 ***
 ## 2 데이터 전처리
