@@ -50,7 +50,7 @@ ex) 2021년 9월 26일의 매출 예측치 = (2018년 9월 26일 매출액 + 201
 
     금액 예측이므로 평가지표는 R2로 선정하였고, 3월 실제 일매출과 예측 매출로 비교하였습니다.
 
-1. Simple Moving Average
+1. Simple Moving Average   
 단순이동평균은 특정 기간 동안의 data를 단순 평균하여 계산합니다. 따라서 그 기간 동안의 data를 대표하는 값이 이동평균 안에는 그 동안의 data 움직임을 포함하고 있습니다. 이동평균의 특징인 지연(lag)이 발생하며 수학적으로 n/2 시간 만큼의 지연이 발생합니다. 단순이동평균은 모든 데이터의 중요도를 동일하다고 간주합니다.
 
 ```python
@@ -78,7 +78,7 @@ def make_sma_arr(dataframe, col, start, window):
 result, result2 = make_sma_arr(df_date_sum, 'SALE_AMT',2,4)    
 ```
 
-2. Exponential Moving Average
+2. Exponential Moving Average   
 지수이동평균은 가중이동평균 중의 하나로 단순이동평균보다 최근의 데이터에 높은 가중치를 부여하는 방법입니다.
 
 ```python
@@ -106,7 +106,7 @@ def make_emw_arr(dataframe, col, start, window):
 plot_model_graph(result2.tail(10), 'SALE_YMD', ['SALE_AMT','2ew','3ew','4ew'])
 ```
 
-3. Simple Exponential Smoothing
+3. Simple Exponential Smoothing   
 trend나 seasonality 반영을 하지 못하며 level 정도만 수평선으로 나오게 됩니다.
 
 ```python
@@ -118,7 +118,7 @@ y_pred1 = ssm1.fittedvalues
 y_pred2 = ssm2.fittedvalues
 ```
 
-4. Holt-Winter's Exponential Smoothing
+4. Holt-Winter's Exponential Smoothing   
 trend로 데이터를 예측하기 위해 Simple Exponential Smoothing에서 확장한 것입니다. 예측을 위한 식 외에 level smoothing을 위한 식과 trend smoothing을 위한 식이 포함됩니다. 생성된 예측은 선형적으로 나타나기 때문에 예측 범위가 멀어질 수록 over-forecast 되는 경향이 있다.
 
 ```python
