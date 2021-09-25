@@ -110,7 +110,7 @@ X_samp_smote, y_samp_smote = SMOTE(random_state=4).fit_resample(X_train, y_train
 ### MLP
 
 
-1. Parameter
+1. Parameter   
 학습을 위해 사용한 학습 파라미터들은 아래와 같습니다.
 
 ```python
@@ -121,7 +121,7 @@ NUM_FEATURES = len(X.columns)
 NUM_CLASSES = 13
 ```
 
-2. Network
+2. Network   
 분류기 네트워크 구성은 아래와 같습니다.
 ```python
 class MulticlassClassification(nn.Module):
