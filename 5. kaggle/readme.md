@@ -2,6 +2,7 @@
 
     ⭐ 사내 캐글대회에 참여하여 총 38팀 중 2등을 수상하였습니다.
     
+![캐글_순위](https://user-images.githubusercontent.com/31294995/134780170-ec38e969-0c0b-4b86-9b70-c84012fe6109.PNG)
 
 📖 **목차**
 
@@ -18,6 +19,7 @@
 ### Class Imbalanced
 
     데이터 분포 확인을 통해 Class Imbalance임을 파악하였습니다.   
+    ![캐글_임밸런스](https://user-images.githubusercontent.com/31294995/134780171-acf6d445-93cb-4b7a-8002-6247a4f444d5.PNG)
 
 ***
 ## 2 데이터 전처리
@@ -126,8 +128,7 @@ def network(X_train,y_train,X_test,y_test):
 ***
 ## 4 수행 결과
 
-1. train vs val Accuracy & Loss  
-
-2. Ranking   
+train vs val Accuracy & Loss  
+![캐글_로스](https://user-images.githubusercontent.com/31294995/134780172-2df0071f-5848-40a5-b1f7-2ce0b2d06454.PNG)
 
 ***
