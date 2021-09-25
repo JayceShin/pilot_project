@@ -178,7 +178,8 @@ holidays = pd.concat((redday, evntday))
 
 df_ml['cap'] = 10000000
 df_ml['floor'] = 300000
-model =  Prophet.Prophet(changepoint_prior_scale=0.01, holidays=holidays, yearly_seasonality=10, weekly_seasonality=5, daily_seasonality=False) 
+model =  Prophet.Prophet(changepoint_prior_scale=0.01, holidays=holidays, 
+                        yearly_seasonality=10, weekly_seasonality=5, daily_seasonality=False) 
 model.fit(df_ml);
 ```
 
