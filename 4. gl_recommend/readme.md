@@ -61,8 +61,9 @@
 
 ### Xgboost
 
-1. RandomizerSerachCV   
-최적 파라미터값을 찾기 위해 RandomizerSearch를 사용하였습니다. 일반적으로 모든 조합을 찾는 GridSearch보다 성능은 떨어질지 몰라도 조합을 무작위로 추출하는 RandomizerSearch가 시간 면에서 효율적이라고 판단하였기 때문입니다. 
+1. RandomizerSerach & K-fold    
+최적 파라미터값을 찾기 위해 RandomizerSearch를 사용하였습니다. 일반적으로 모든 조합을 찾는 GridSearch보다 성능은 떨어질지 몰라도 조합을 무작위로 추출하는 RandomizerSearch가 시간 면에서 효율적이라고 판단하였기 때문입니다. 또한 검증을 위해 3 fold를 사용하였습니다.
+
 ```python
 folds = 3
 param_comb = 5
@@ -75,7 +76,8 @@ params = {
         }
 
 skf = StratifiedKFold(n_splits=folds, shuffle = True, random_state = 1001)
-random_search = RandomizedSearchCV(xgb, param_distributions=params, n_iter=param_comb, scoring='f1_micro', n_jobs=4, cv=skf.split(X_train,y_train), 
+random_search = RandomizedSearchCV(xgb, param_distributions=params, n_iter=param_comb, scoring='f1_micro', 
+                                    n_jobs=4, cv=skf.split(X_train,y_train), 
                                     verbose=3, random_state=1001, return_train_score=bool )
 
 start_time = timer(None)
