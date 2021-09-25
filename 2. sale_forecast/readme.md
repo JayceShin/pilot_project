@@ -133,6 +133,18 @@ y_pred2 = holt_fit2.fittedvalues
 
 ### Machin Learning Modeling
 
+    시계열 예측 모델인 Prophet을 사용하였으며 각 변수의 조건을 달리하며 실험하였습니다.
+
+0. Boundary
+
+
+1. Basic
+
+
+2. Change Point
+
+
+3. Holiday
 
 
 
