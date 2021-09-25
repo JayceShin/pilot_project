@@ -166,14 +166,26 @@ class MulticlassClassification(nn.Module):
 ***
 ## 4. 수행 결과
 
+    분류 문제이기 때문에 Confusion Matrix를 통해 산출된 F1 Avg Score를 평가 기준으로 삼았습니다.
+
 ### xgboost
 
 1. Basic
+![회계_basic](https://user-images.githubusercontent.com/31294995/134775328-4cb2304c-7f98-4dc3-87e5-8b80241f05d4.png)
 
 2. Under Sampling
+![회계_under](https://user-images.githubusercontent.com/31294995/134775326-3b2b7c31-f384-4089-8c60-b79726cd7409.png)
 
 3. Over Sampling
+![회계_over](https://user-images.githubusercontent.com/31294995/134775324-631a0098-fed4-440d-9c46-a6b964ae345d.png)
 
 ### MLP
 
+1. train vs val Accuracy & Loss
+![회계_mlp_train](https://user-images.githubusercontent.com/31294995/134775322-05fcfc07-272f-4af2-9767-9e8af4407dd9.PNG)
+
+2. Confusion Matrix
+![mlp](https://user-images.githubusercontent.com/31294995/134775327-7ce65f6e-a6cd-4706-a8ef-7ef17ba2bf3a.png)
+
 ### Final
+***
