@@ -102,8 +102,8 @@ def make_emw_arr(dataframe, col, start, window):
     
     return result, result2
     
-# 단순지수평활로 예측한 결과와 실제 결과 비교
-plot_model_graph(result2.tail(10), 'SALE_YMD', ['SALE_AMT','2ew','3ew','4ew'])
+# 단순지수평활 window size 2, 3, 4
+result, result2 = make_emw_arr(df_date_sum, 'SALE_AMT',2,4)
 ```
 
 3. Simple Exponential Smoothing   
