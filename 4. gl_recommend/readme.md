@@ -100,6 +100,8 @@ timer(start_time)
 2. Sampling(Under/ Over)   
 데이터 분포를 살펴보았을때 아래와 같이 불균형 문제가 있음을 확인하였습니다. 따라서 언더/ 오버 샘플링 과정을 통한 결과도 확인하여 높은 스코어를 선택하도록 하였습니다.
 
+![회계_데이터분포](https://user-images.githubusercontent.com/31294995/134775057-84d31520-3b7a-455b-b51d-9453285a160b.PNG)
+
 ```python
 #under sample
 X_under, y_under = RandomUnderSampler(random_state=0).fit_resample(X_train, y_train)
@@ -158,6 +160,7 @@ class MulticlassClassification(nn.Module):
         
         return x
 ```
+![회계_네트워크](https://user-images.githubusercontent.com/31294995/134775058-4acd2d7d-f191-4453-9b85-014956366d51.PNG)
 
 ***
 ## 4. 수행 결과
