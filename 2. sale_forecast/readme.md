@@ -136,8 +136,7 @@ y_pred2 = holt_fit2.fittedvalues
     시계열 예측 모델인 Prophet을 사용하였으며 데이터의 조건을 달리하며 실험하였습니다.
 
 0. Boundary   
-Outlier를 제거하기위해 금액별 Sorting을 하였고, 상위 1개/ 하위 4개를 제거하도록 Boundary를 지정하였습니다.
-
+Outlier를 제거하기위해 금액별 Sorting을 하였고, 상위 1개/ 하위 4개를 제거하도록 Boundary를 지정하였습니다.   
 ![매출_소팅](https://user-images.githubusercontent.com/31294995/134778585-55047d0e-e92f-41cb-93c7-c0c874df69ca.PNG)
 
 1. Basic   
