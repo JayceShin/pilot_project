@@ -190,6 +190,6 @@ class MulticlassClassification(nn.Module):
 2. Confusion Matrix   
 ![mlp](https://user-images.githubusercontent.com/31294995/134775327-7ce65f6e-a6cd-4706-a8ef-7ef17ba2bf3a.png)
 
-### Final
+### Result
     XGBClassfier와 기본 데이터를 통해 나온 0.66을 Best 모델로 선정하였습니다.
 ***
